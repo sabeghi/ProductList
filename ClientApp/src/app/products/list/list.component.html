@@ -1,0 +1,37 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Products</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/products/create/" class="btn btn-success btn-sm">Create New</a>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-sm">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Presentable</th>
+      <th width="300px"></th>
+    </tr>
+    <tr *ngFor="let Product of Products">
+      <td>{{ Product.id }}</td>
+      <td>{{ Product.name }}</td>
+      <td>{{ Product.code }}</td>
+      <td>{{ Product.categoryNavigation?.name }}</td>
+      <td>{{ Product.description}}</td>
+      <td>{{ Product.presentable }}</td>
+      <td class="text-center">
+        <a href="#" [routerLink]="['/products/', Product.id, 'details']" class="btn btn-info btn-sm">View</a>
+        <a href="#" [routerLink]="['/products/', Product.id, 'edit']" class="btn btn-primary btn-sm">Edit</a>
+        <a href="#" [routerLink]="['/products/', Product.id, 'Attr']" class="btn btn-warning btn-sm">Attributes</a>
+        <button type="button" (click)="deleteProduct(Product.id)" class="btn btn-danger btn-sm">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

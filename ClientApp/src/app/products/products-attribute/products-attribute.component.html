@@ -1,0 +1,25 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Product Attribute</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/products/list" class="btn btn-secondary btn-sm">Back To Products List</a>
+    </div>
+  </div>
+  <table class="table table-bordered table-sm">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Product</th>
+    </tr>
+    <tr *ngFor="let attr of productattr">
+      <td>{{ attr.id }}</td>
+      <td>{{ attr.name }}</td>
+      <td>{{ attr.type }}</td>
+      <td>{{ attr.idNavigation?.name }}</td>
+    </tr>
+  </table>
+</div>
