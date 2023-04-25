@@ -49,8 +49,8 @@ namespace ProductCrud.Data
                 entity.Property(e => e.Name).HasMaxLength(50);
 
                 entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.ProductAttribute)
-                    .HasForeignKey<ProductAttribute>(d => d.ProductId)
+                    .WithMany(p => p.ProductAttribute)
+                    //.HasForeignKey<ProductAttribute>(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Attributes_Products");
             });

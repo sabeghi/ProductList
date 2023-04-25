@@ -15,6 +15,6 @@ namespace ProductCrud.Models
         public int Category { get; set; }
 
         public virtual Category CategoryNavigation { get; set; }
-        public virtual ProductAttribute ProductAttribute { get; set; }
+        public virtual List<ProductAttribute> ProductAttribute { get; set; }
     }
 }

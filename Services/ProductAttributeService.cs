@@ -19,9 +19,11 @@ namespace ProductCrud.Services
 
         public async Task<IEnumerable<ProductAttribute>> GetProductAttributeById(int id)
         {
-            return await _context.ProductAttributes.Where(attr => attr.ProductId == id)
+            var aa =  await _context.ProductAttributes.Where(attr => attr.ProductId == id)
                 .Include(x => x.IdNavigation)
                 .ToListAsync();
+
+            return aa;
         }
 
         public async Task<ProductAttribute> CreateProductAttribute(ProductAttribute ProductAttribute)
